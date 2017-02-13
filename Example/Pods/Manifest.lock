@@ -1,0 +1,29 @@
+PODS:
+  - Comet (0.1.0)
+  - HKSplitMenu (0.1.0)
+  - ObjectMapper (2.2.2)
+
+DEPENDENCIES:
+  - Comet (from `https://github.com/Harley-xk/Comet.git`)
+  - HKSplitMenu (from `../`)
+  - ObjectMapper
+
+EXTERNAL SOURCES:
+  Comet:
+    :git: https://github.com/Harley-xk/Comet.git
+  HKSplitMenu:
+    :path: ../
+
+CHECKOUT OPTIONS:
+  Comet:
+    :commit: 7b6fef07ad5f79b9e3b025326842b5e03f750e5c
+    :git: https://github.com/Harley-xk/Comet.git
+
+SPEC CHECKSUMS:
+  Comet: d0cd7a48848ae34ff71942dfed185b61f55ee66c
+  HKSplitMenu: 9ab46c345422f6c9241bec8dfb7fa81e0bc07297
+  ObjectMapper: 9e385c2295bcc4e16eabbcfc85db801442bba545
+
+PODFILE CHECKSUM: 392dd96871396a7bb06a425977896a08d91dd3b5
+
+COCOAPODS: 1.2.0.beta.1

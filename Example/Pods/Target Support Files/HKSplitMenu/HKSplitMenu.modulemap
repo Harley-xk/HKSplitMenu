@@ -1,0 +1,6 @@
+framework module HKSplitMenu {
+  umbrella header "HKSplitMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

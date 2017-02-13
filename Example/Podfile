@@ -1,0 +1,10 @@
+use_frameworks!
+
+target 'HKSplitMenu_Example' do
+
+    pod 'HKSplitMenu', :path => '../'
+
+    pod 'ObjectMapper'
+    pod 'Comet', :git => 'https://github.com/Harley-xk/Comet.git'
+
+end
