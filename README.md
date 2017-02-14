@@ -8,7 +8,7 @@ HKSplitMenu 在侧滑模式下支持从屏幕边缘滑动显示菜单栏。
 
 显示效果如图：
 
-![image](../Image.png)
+![image](Image.png)
 
 
 ## 安装
