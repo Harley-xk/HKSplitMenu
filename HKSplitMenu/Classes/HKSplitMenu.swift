@@ -157,7 +157,7 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         contentContainer.isUserInteractionEnabled = false
         
         let identity = CGAffineTransform.identity
-        UIView.animate(withDuration: 0.25) { 
+        UIView.animate(withDuration: 0.15) {
             self.contentContainer.transform = identity.translatedBy(x: self.menuWidth, y: 0)
         }
     }
@@ -168,7 +168,7 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         contentContainer.isUserInteractionEnabled = true
         
         let identity = CGAffineTransform.identity
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.15) {
             self.contentContainer.transform = identity
         }
     }
@@ -318,27 +318,6 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         view.layoutIfNeeded()
     }
 
-}
-
-extension UIView {
-    fileprivate convenience init(forAutoLayout: Bool) {
-        self.init()
-        self.translatesAutoresizingMaskIntoConstraints = !forAutoLayout
-    }
-}
-
-public extension UIViewController {
-    public var splitMenu: HKSplitMenu? {
-        var vc = parent
-        while vc != nil {
-            if vc is HKSplitMenu {
-                return vc as! HKSplitMenu
-            } else {
-                vc = vc?.parent
-            }
-        }
-        return nil
-    }
 }
 
 

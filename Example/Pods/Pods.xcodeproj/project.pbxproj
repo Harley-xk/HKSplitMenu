@@ -47,6 +47,7 @@
 		AFFF408FD67CA07C0EF99012ECA45DEE /* HKSplitMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3B7C1303225B0B37AD9F90841A9FEB /* HKSplitMenu.swift */; };
 		B3F322D2C4B88A3EE24DA8797D1F3189 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 337802C2906339D399C44364B1313B1F /* ObjectMapper-dummy.m */; };
 		B5BCDF3C0B3A767A950FD14BED5EC314 /* UINavigationBar+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8917428115EC8256D863E991335237 /* UINavigationBar+Comet.swift */; };
+		B660EDD81E52DDEB00D581C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660EDD61E52DDC400D581C1 /* Extensions.swift */; };
 		BA516DAE6E35357FC82078E2E8B54D7A /* Dispatch+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDD27C24D916344AC6017B47FB5C79 /* Dispatch+Comet.swift */; };
 		C3702EE27723C2A0A4E256C533E06214 /* UIResponder+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BDB8DF854D718F6562B99E3E3F8692 /* UIResponder+Comet.swift */; };
 		C856C6210800DC3AB26B0021153AE865 /* UIVIew+Comet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F4ECE77B614DA540661FBADB38BF4F /* UIVIew+Comet.swift */; };
@@ -106,31 +107,31 @@
 		3435FFB79AA21198CBC46EE0FFEC2987 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
 		3453542D93AC384F1487FB7D3252FAF1 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatterTransform.swift; path = Sources/DateFormatterTransform.swift; sourceTree = "<group>"; };
 		40C602D934D04E153D0AA79ED5C7AC33 /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
-		41A874883ADBAC2E5507C67ADCC454BC /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
+		41A874883ADBAC2E5507C67ADCC454BC /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
 		42D49337B6165E4DC92106639BBA095F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44EF40F8A43E8E4FB8D33D2214BE21A3 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		49E2492376FFB3A2D7A1FF38E86D2910 /* Pods-HKSplitMenu_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HKSplitMenu_Example-frameworks.sh"; sourceTree = "<group>"; };
 		593B63BF15B5B8A899268750496CA26C /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
-		59A9129B3BB041629891727A42F3CD02 /* Comet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Comet.modulemap; sourceTree = "<group>"; };
+		59A9129B3BB041629891727A42F3CD02 /* Comet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Comet.modulemap; sourceTree = "<group>"; };
 		63458B25029554BA0EA5EA93ED0F34F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63734391E792C7978E28F9BB9AC0D2E4 /* EnumOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumOperators.swift; path = Sources/EnumOperators.swift; sourceTree = "<group>"; };
 		72D919233B5689CD6B161EF11EF24AB6 /* HKSplitMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HKSplitMenu-umbrella.h"; sourceTree = "<group>"; };
 		7489612AD27C0887F877039FAAC83ED0 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
 		74EDD27C24D916344AC6017B47FB5C79 /* Dispatch+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dispatch+Comet.swift"; path = "Comet/Extensions/Dispatch+Comet.swift"; sourceTree = "<group>"; };
-		79219FAA908F6DABDE227B8AB8CF479B /* Pods-HKSplitMenu_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HKSplitMenu_Example.modulemap"; sourceTree = "<group>"; };
+		79219FAA908F6DABDE227B8AB8CF479B /* Pods-HKSplitMenu_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-HKSplitMenu_Example.modulemap"; sourceTree = "<group>"; };
 		796FE7B1AAF0BFE8194634598096C3A1 /* HairLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HairLine.swift; path = Comet/Classes/HairLine.swift; sourceTree = "<group>"; };
 		7A8917428115EC8256D863E991335237 /* UINavigationBar+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Comet.swift"; path = "Comet/Extensions/UINavigationBar+Comet.swift"; sourceTree = "<group>"; };
 		7D2420A0992D3AD1A4D89E48396CDF85 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Sources/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
 		7F3C71C696BB9F121F3E29264207B9B1 /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSDecimalNumberTransform.swift; path = Sources/NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
 		817B2B6B550A7E963414CBA9DE0D2A7E /* Date+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Comet.swift"; path = "Comet/Extensions/Date+Comet.swift"; sourceTree = "<group>"; };
-		84EF8A634C267F3B774C5A74A44FEEC1 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84EF8A634C267F3B774C5A74A44FEEC1 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8808FDFED15CACDDDD3C22651EA58B1F /* UIColor+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Comet.swift"; path = "Comet/Extensions/UIColor+Comet.swift"; sourceTree = "<group>"; };
 		8A8B61BFD2FA4AD0C59521A8243E7B1E /* HKSplitMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HKSplitMenu-prefix.pch"; sourceTree = "<group>"; };
 		8B0A102536F63DB934431F94F8F38B2A /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
 		8B74DB876E766C25988FE5459D825AB0 /* UINavigationController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationController+Comet.swift"; path = "Comet/Extensions/UINavigationController+Comet.swift"; sourceTree = "<group>"; };
 		8D57C544E3CC8A603A105AAFDB31FC27 /* Pods-HKSplitMenu_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HKSplitMenu_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9175BFEE3FE378D0EA795898934533C4 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Comet/Classes/Utils.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97B025797DAABC5D6D17623D1FB853DB /* UIViewController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Comet.swift"; path = "Comet/Extensions/UIViewController+Comet.swift"; sourceTree = "<group>"; };
 		9AF8BD4ABA3BAAFD78EDBA42D11CC184 /* String+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Comet.swift"; path = "Comet/Extensions/String+Comet.swift"; sourceTree = "<group>"; };
 		9EF3CD87632B5F0856805427466424AE /* Pods-HKSplitMenu_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HKSplitMenu_Example-resources.sh"; sourceTree = "<group>"; };
@@ -144,19 +145,20 @@
 		ADB8C12695C7844C0C4009C3FD325EAD /* Pods-HKSplitMenu_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HKSplitMenu_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AFF6DE76EB875CB775653F422CC8BEEF /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
 		B38DDDD2489121AFAE5DED79B2A9CBEE /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
+		B660EDD61E52DDC400D581C1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B796C226058E3D019F3206111EFD9C56 /* ImmutableMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmutableMappable.swift; path = Sources/ImmutableMappable.swift; sourceTree = "<group>"; };
 		B7C1623C1A9C8595A48785F8C82C1A2F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE98E9C98728AE119E8534C8036738F7 /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = Sources/EnumTransform.swift; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CE4C3794AC95A5E8526B5076D6AE200A /* Comet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Comet.framework; path = Comet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4C3794AC95A5E8526B5076D6AE200A /* Comet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Comet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D39CAE223434A784D9B495AFD0581545 /* Pods-HKSplitMenu_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HKSplitMenu_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D663262D5C0EEC42DD122845E0D2409B /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
 		DD58D7D9C7176FBDE1B8EEAD7A621FE7 /* UIAlertController+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIAlertController+Comet.swift"; path = "Comet/Extensions/UIAlertController+Comet.swift"; sourceTree = "<group>"; };
 		DFA95E832C78CCF9C33E80B43B745318 /* Pods-HKSplitMenu_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HKSplitMenu_Example-dummy.m"; sourceTree = "<group>"; };
 		E1F4ECE77B614DA540661FBADB38BF4F /* UIVIew+Comet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIVIew+Comet.swift"; path = "Comet/Extensions/UIVIew+Comet.swift"; sourceTree = "<group>"; };
-		E8974CCF1115BD2CD102ED98BB1F0DE3 /* Pods_HKSplitMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HKSplitMenu_Example.framework; path = "Pods-HKSplitMenu_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC83CC7D6713EDE36128B085A6665739 /* HKSplitMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = HKSplitMenu.modulemap; sourceTree = "<group>"; };
-		ED005975E1BD2408EA1BECD514ADB27B /* HKSplitMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HKSplitMenu.framework; path = HKSplitMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8974CCF1115BD2CD102ED98BB1F0DE3 /* Pods_HKSplitMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HKSplitMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC83CC7D6713EDE36128B085A6665739 /* HKSplitMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = HKSplitMenu.modulemap; sourceTree = "<group>"; };
+		ED005975E1BD2408EA1BECD514ADB27B /* HKSplitMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HKSplitMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAB89B644D522967DDCE9EE0B1279B1 /* Path.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Path.swift; path = Comet/Classes/Path.swift; sourceTree = "<group>"; };
 		F17DD3434C7B9752176825D9C826FA2A /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = Sources/TransformType.swift; sourceTree = "<group>"; };
 		F5C6D65252F96D214055007AA4F70886 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
@@ -204,8 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				FE3B7C1303225B0B37AD9F90841A9FEB /* HKSplitMenu.swift */,
+				B660EDD61E52DDC400D581C1 /* Extensions.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -228,7 +230,6 @@
 			children = (
 				22DC6627B0F31F63A586D92C7E40D6F2 /* Classes */,
 			);
-			name = HKSplitMenu;
 			path = HKSplitMenu;
 			sourceTree = "<group>";
 		};
@@ -310,7 +311,6 @@
 				593B63BF15B5B8A899268750496CA26C /* URLTransform.swift */,
 				A85ECE95FA55FC668338EB2EC5B83E99 /* Support Files */,
 			);
-			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -380,7 +380,6 @@
 				9175BFEE3FE378D0EA795898934533C4 /* Utils.swift */,
 				70F6228276C78B2ED68807B53F33BECB /* Support Files */,
 			);
-			name = Comet;
 			path = Comet;
 			sourceTree = "<group>";
 		};
@@ -554,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D5D2A6159CF4B64E1454E9E2250A5CE /* HKSplitMenu-dummy.m in Sources */,
+				B660EDD81E52DDEB00D581C1 /* Extensions.swift in Sources */,
 				AFFF408FD67CA07C0EF99012ECA45DEE /* HKSplitMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
