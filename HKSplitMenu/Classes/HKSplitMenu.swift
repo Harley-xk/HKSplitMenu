@@ -151,7 +151,7 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         view.layoutIfNeeded()
     }
     
-    private func showMenu() {
+    open func showMenu() {
         menuShown = true
         tapGesture.isEnabled = true
         contentContainer.isUserInteractionEnabled = false
@@ -162,7 +162,7 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    @objc private func hideMenu() {
+    @objc open func hideMenu() {
         menuShown = false
         tapGesture.isEnabled = false
         contentContainer.isUserInteractionEnabled = true
@@ -189,7 +189,7 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         }
         if gestureRecognizer == panGesture {
             let point = touch.location(in: contentContainer)
-            return point.x <= panGestureEdge
+            return (point.x <= panGestureEdge || isMenuShown)
         }
         return true
     }
@@ -197,7 +197,7 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
     @objc private func panGestureAction(_ gesture: UIPanGestureRecognizer) {
         
         let point = gesture.location(in: view)
-        var delta = point.x - panGestureEdge
+        var delta = point.x - panGestureStartX
 
         if gesture.state == .began {
             panGestureStartX = point.x
