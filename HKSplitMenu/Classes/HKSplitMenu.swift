@@ -173,6 +173,17 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    // MARK: - SizeClass
+    open override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        menu?.willTransition(to: newCollection, with: coordinator)
+        currentContent?.willTransition(to: newCollection, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { (context) in
+            self.fixedMenu = newCollection.horizontalSizeClass == .regular
+        }, completion: nil)
+    }
+    
     // MARK: - Gesture
     /// 从屏幕边缘侧滑可以开启菜单，这个参数设置响应侧滑手势的宽度范围
     open var panGestureEdge: CGFloat = 30
