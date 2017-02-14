@@ -13,7 +13,7 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateToggleItem(for: traitCollection)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +25,23 @@ class ContentViewController: UIViewController {
     @IBAction func menuAction(_ sender: Any) {
         splitMenu?.toggleMenu()
     }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
 
+        updateToggleItem(for: newCollection)
+    }
+    
+    func updateToggleItem(for traitCollection: UITraitCollection) {
+        if traitCollection.horizontalSizeClass == .regular {
+            navigationItem.leftBarButtonItem = nil
+        } else {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "菜单", style: .plain, target: self, action: #selector(menuAction(_:)))
+        }
+    }
+    
+
+    
     /*
     // MARK: - Navigation
 
