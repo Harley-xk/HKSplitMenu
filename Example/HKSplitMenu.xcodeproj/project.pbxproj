@@ -18,7 +18,7 @@
 		B655F2661E519A0100846C67 /* Menu.plist in Resources */ = {isa = PBXBuildFile; fileRef = B655F2651E519A0100846C67 /* Menu.plist */; };
 		B655F2681E519B2700846C67 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655F2671E519B2700846C67 /* Model.swift */; };
 		B655F26B1E51A91100846C67 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B655F26A1E51A91100846C67 /* ContentViewController.swift */; };
-		B6C6E4A71E515233004A639C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B6C6E4A51E515233004A639C /* README.md */; };
+		B660EDDA1E52FB8C00D581C1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B660EDD91E52FB8C00D581C1 /* README.md */; };
 		B6C6E4AB1E517702004A639C /* HKSplitMenu.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = B6C6E4AA1E517702004A639C /* HKSplitMenu.podspec.json */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +39,7 @@
 		B655F2651E519A0100846C67 /* Menu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Menu.plist; sourceTree = "<group>"; };
 		B655F2671E519B2700846C67 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B655F26A1E51A91100846C67 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		B6C6E4A51E515233004A639C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B660EDD91E52FB8C00D581C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B6C6E4AA1E517702004A639C /* HKSplitMenu.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = HKSplitMenu.podspec.json; path = ../HKSplitMenu.podspec.json; sourceTree = "<group>"; };
 		B7E3065646A999558A696470 /* Pods_HKSplitMenu_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HKSplitMenu_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2FD9339970FA2B0AD75B884 /* Pods-HKSplitMenu_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HKSplitMenu_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HKSplitMenu_Tests/Pods-HKSplitMenu_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 			children = (
 				B6C6E4AA1E517702004A639C /* HKSplitMenu.podspec.json */,
 				8FFACEDCC0669B362C930DF2 /* LICENSE */,
-				B6C6E4A51E515233004A639C /* README.md */,
+				B660EDD91E52FB8C00D581C1 /* README.md */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -277,9 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				B6C6E4A71E515233004A639C /* README.md in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				B655F2681E519B2700846C67 /* Model.swift in Sources */,
+				B660EDDA1E52FB8C00D581C1 /* README.md in Sources */,
 				B655F2621E517AD700846C67 /* MenuViewController.swift in Sources */,
 				B655F2641E5196CD00846C67 /* MenuItem.swift in Sources */,
 				B655F26B1E51A91100846C67 /* ContentViewController.swift in Sources */,
