@@ -24,8 +24,10 @@ class MenuViewController: UIViewController,
                     let content = ContentViewController.fromSB()
                     content.title = currentItem!.title
                     let nav = UINavigationController(rootViewController: content)
+                    nav.navigationBar.isTranslucent = false
                     return nav
                 })
+                splitMenu?.toggleMenu()
             }
         }
     }

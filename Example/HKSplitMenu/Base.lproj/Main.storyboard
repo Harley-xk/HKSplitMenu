@@ -88,7 +88,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="t7x-B3-wLt">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="93X-CE-W0H">
+                        <barButtonItem key="leftBarButtonItem" title="菜单" id="93X-CE-W0H">
                             <connections>
                                 <action selector="menuAction:" destination="y26-Mm-1ze" id="mNo-90-WLE"/>
                             </connections>

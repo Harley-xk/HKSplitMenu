@@ -15,9 +15,17 @@ class ViewController: HKSplitMenu {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let barTintColor = UIColor(red: 0.204, green: 0.588, blue: 0.831, alpha: 1)
+        UINavigationBar.customizeAppearenceColorWith(barTint: barTintColor, foreground: .white)
+        
         menu = MenuViewController.fromSB()
         
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

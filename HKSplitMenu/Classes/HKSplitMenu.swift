@@ -9,7 +9,7 @@
 import UIKit
 
 
-open class HKSplitMenu: UIViewController {
+open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
     
     // 菜单栏的宽度，默认 64
     open var menuWidth: CGFloat = 64 {
@@ -20,6 +20,7 @@ open class HKSplitMenu: UIViewController {
         }
     }
     
+    // 菜单视图
     open var menu: UIViewController? {
         willSet {
             menu?.view.removeFromSuperview()
@@ -30,6 +31,7 @@ open class HKSplitMenu: UIViewController {
         }
     }
     
+    // 内容视图
     open var content: UIViewController? {
         return currentContent
     }
@@ -51,11 +53,30 @@ open class HKSplitMenu: UIViewController {
         updateContent(with: newContent!)
     }
     
+    
+    /// 打开或者关闭菜单，锁定菜单时无效
+    open func toggleMenu() {
+        if isMenuFixed { return }
+        
+        if isMenuShown { hideMenu() }
+        else { showMenu() }
+    }
+    
     /// 加载内容视图，并且不缓存
     open func setContent(_ content: UIViewController) {
         updateContent(with: content)
     }
     
+    /// 是否锁定菜单，菜单锁定后无法隐藏
+    open var isMenuFixed: Bool {
+        return fixedMenu
+    }
+    
+    /// 菜单是否显示
+    open var isMenuShown: Bool {
+        return menuShown
+    }
+
     // MARK: - Private
     private weak var menuContainer: UIView!
     private weak var menuWidthConstraint: NSLayoutConstraint!
@@ -66,17 +87,36 @@ open class HKSplitMenu: UIViewController {
     private var currentContent: UIViewController?
     private var cachedContentViewControllers: [String : UIViewController] = [:]
     
-    // 加载视图
-    override open func loadView() {
-        super.loadView()
-        
+    private var panGesture: UIPanGestureRecognizer!
+    private var tapGesture: UITapGestureRecognizer!
+    
+    private var fixedMenu = false {
+        didSet {
+            updateLayout()
+        }
     }
 
+    private var menuShown = false
+    
+    private var shouldFixMenu: Bool {
+        return traitCollection.horizontalSizeClass == .regular
+    }
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
 
         setupMenuContainer()
         setupContentContainer()
+        
+        panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureAction(_:)))
+        panGesture.delegate = self
+        view.addGestureRecognizer(panGesture)
+        
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideMenu))
+        tapGesture.delegate = self
+        view.addGestureRecognizer(tapGesture)
+        
+        fixedMenu = shouldFixMenu
     }
 
     override open func didReceiveMemoryWarning() {
@@ -94,6 +134,104 @@ open class HKSplitMenu: UIViewController {
         cachedContentViewControllers[identifier] = content
     }
 
+    
+    // MARK: - Layouts
+    private func updateLayout() {
+        
+        contentLeftConstraint.constant = isMenuFixed ? menuWidth : 0
+        menuShown = isMenuFixed
+
+        panGesture.isEnabled = !isMenuFixed
+        tapGesture.isEnabled = false
+        
+        let identityTransform = CGAffineTransform.identity
+        contentContainer.transform = identityTransform
+        contentContainer.isUserInteractionEnabled = true
+        
+        view.layoutIfNeeded()
+    }
+    
+    private func showMenu() {
+        menuShown = true
+        tapGesture.isEnabled = true
+        contentContainer.isUserInteractionEnabled = false
+        
+        let identity = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.25) { 
+            self.contentContainer.transform = identity.translatedBy(x: self.menuWidth, y: 0)
+        }
+    }
+    
+    @objc private func hideMenu() {
+        menuShown = false
+        tapGesture.isEnabled = false
+        contentContainer.isUserInteractionEnabled = true
+        
+        let identity = CGAffineTransform.identity
+        UIView.animate(withDuration: 0.25) {
+            self.contentContainer.transform = identity
+        }
+    }
+    
+    // MARK: - Gesture
+    /// 从屏幕边缘侧滑可以开启菜单，这个参数设置响应侧滑手势的宽度范围
+    open var panGestureEdge: CGFloat = 30
+    /// 内容视图向右最大滑动距离
+    open var panGestureMaxOffset: CGFloat = 200
+    
+    /// 侧滑手势起点
+    private var panGestureStartX: CGFloat = 0
+ 
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if gestureRecognizer == tapGesture {
+            let point = touch.location(in: view)
+            return !menuContainer.frame.contains(point)
+        }
+        if gestureRecognizer == panGesture {
+            let point = touch.location(in: contentContainer)
+            return point.x <= panGestureEdge
+        }
+        return true
+    }
+    
+    @objc private func panGestureAction(_ gesture: UIPanGestureRecognizer) {
+        
+        let point = gesture.location(in: view)
+        var delta = point.x - panGestureEdge
+
+        if gesture.state == .began {
+            panGestureStartX = point.x
+        }
+        else if gesture.state == .changed {
+            if panGestureStartX > panGestureEdge && !isMenuShown {
+                return
+            }
+            if isMenuShown {
+                delta += menuWidth
+            }
+            delta = max(0, delta)
+            if delta > menuWidth {
+                delta = panGestureMaxOffset - (menuWidth * (panGestureMaxOffset - menuWidth) / delta)
+            }
+            
+            let identity = CGAffineTransform.identity
+            contentContainer.transform = identity.translatedBy(x: delta, y: 0)
+        }
+        else {
+            
+            if panGestureStartX > panGestureEdge && !isMenuShown {
+                panGestureStartX = 0
+                return
+            }
+            
+            if delta >= menuWidth {
+                showMenu()
+            } else {
+                hideMenu()
+            }
+        }        
+    }
+    
     // MARK: - AutoLayout
     private func setupMenuContainer() {
         
@@ -129,12 +267,14 @@ open class HKSplitMenu: UIViewController {
     
     private func setupMenu() {
         
-        if let menuView = menu?.view {
+        if menu != nil {
             
-            menuView.translatesAutoresizingMaskIntoConstraints = false
-            menuContainer.addSubview(menuView)
             addChildViewController(menu!)
             
+            let menuView = menu!.view!
+            menuView.translatesAutoresizingMaskIntoConstraints = false
+            menuContainer.addSubview(menuView)
+
             let leftC = NSLayoutConstraint(item: menuView, attribute: .left, relatedBy: .equal, toItem: menuContainer, attribute: .left, multiplier: 1, constant: 0)
             let topC = NSLayoutConstraint(item: menuView, attribute: .top, relatedBy: .equal, toItem: menuContainer, attribute: .top, multiplier: 1, constant: 0)
             let bottomC = NSLayoutConstraint(item: menuView, attribute: .bottom, relatedBy: .equal, toItem: menuContainer, attribute: .bottom, multiplier: 1, constant: 0)
@@ -178,8 +318,13 @@ extension UIView {
 
 public extension UIViewController {
     public var splitMenu: HKSplitMenu? {
-        if parent is HKSplitMenu {
-            return parent as! HKSplitMenu
+        var vc = parent
+        while vc != nil {
+            if vc is HKSplitMenu {
+                return vc as! HKSplitMenu
+            } else {
+                vc = vc?.parent
+            }
         }
         return nil
     }
