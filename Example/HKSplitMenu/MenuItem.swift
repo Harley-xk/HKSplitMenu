@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 
 class MenuGroup: Model {
-    var hederHeight: CGFloat = 0
+    var headerHeight: CGFloat = 0
     var items: [MenuItem] = []
     
     override func mapping(map: Map) {

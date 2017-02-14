@@ -152,6 +152,8 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
     }
     
     open func showMenu() {
+        if isMenuFixed || isMenuShown { return }
+
         menuShown = true
         tapGesture.isEnabled = true
         contentContainer.isUserInteractionEnabled = false
@@ -163,6 +165,9 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc open func hideMenu() {
+        
+        if isMenuFixed || !isMenuShown { return }
+
         menuShown = false
         tapGesture.isEnabled = false
         contentContainer.isUserInteractionEnabled = true

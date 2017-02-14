@@ -19,7 +19,6 @@ class ViewController: HKSplitMenu {
         UINavigationBar.customizeAppearenceColorWith(barTint: barTintColor, foreground: .white)
         
         menu = MenuViewController.fromSB()
-        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

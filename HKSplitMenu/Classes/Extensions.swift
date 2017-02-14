@@ -16,6 +16,8 @@ extension UIView {
 }
 
 public extension UIViewController {
+    
+    /// 获取当前视图的分栏菜单，不存在则返回 nil
     public var splitMenu: HKSplitMenu? {
         var vc = parent
         while vc != nil {

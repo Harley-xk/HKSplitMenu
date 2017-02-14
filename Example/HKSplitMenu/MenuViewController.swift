@@ -36,6 +36,7 @@ class MenuViewController: UIViewController,
 
         setupMenuItems()
         currentItem = groups[0].items[0]
+        tableView.reloadData()
     }
 
     private func setupMenuItems() {
@@ -58,11 +59,13 @@ class MenuViewController: UIViewController,
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return groups[section].hederHeight
+        return groups[section].headerHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
+        let view =  UIView()
+        view.backgroundColor = .clear
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

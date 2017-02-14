@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKj-ro-agm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="952.5" y="816.25"/>
+            <point key="canvasLocation" x="34" y="783"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="M6F-iT-dPv">
@@ -112,17 +112,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ua5-08-mss">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="64" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ua5-08-mss">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <color key="backgroundColor" red="0.13725490200000001" green="0.14901960780000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="cT9-AX-VJ4">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="2xw-Cf-n4g">
+                                    <rect key="frame" x="0.0" y="158" width="320" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="64" id="Ece-vg-NfE" customClass="MenuCell" customModule="HKSplitMenu_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="48" width="320" height="64"/>
+                                        <rect key="frame" x="0.0" y="76" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ece-vg-NfE" id="99U-9Q-tzq">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
@@ -162,9 +167,9 @@
                                                         <constraint firstItem="ozv-8H-g9p" firstAttribute="centerX" secondItem="Z18-r6-u4B" secondAttribute="centerX" id="xum-fG-sGr"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-PZ-1UK">
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-PZ-1UK">
                                                     <rect key="frame" x="0.0" y="63.5" width="320" height="0.5"/>
-                                                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.01341731008" green="0.72700172659999995" blue="0.99998599290000001" alpha="0.50448301174496646" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="RO4-At-gV7"/>
                                                     </constraints>
@@ -188,15 +193,26 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="6we-O6-HQg" id="dCG-2x-NLq"/>
                                     <outlet property="delegate" destination="6we-O6-HQg" id="n5r-sw-REc"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzI-yC-7nQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                <color key="backgroundColor" red="0.13725490196078433" green="0.14901960784313725" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="F6K-BW-dSn"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ua5-08-mss" secondAttribute="trailing" id="FXH-VP-YrN"/>
+                            <constraint firstItem="jzI-yC-7nQ" firstAttribute="top" secondItem="jQB-Ge-5Kt" secondAttribute="top" id="HMe-sy-mD1"/>
+                            <constraint firstAttribute="trailing" secondItem="jzI-yC-7nQ" secondAttribute="trailing" id="HpB-uP-mA0"/>
+                            <constraint firstItem="jzI-yC-7nQ" firstAttribute="leading" secondItem="jQB-Ge-5Kt" secondAttribute="leading" id="IsU-YG-9QM"/>
                             <constraint firstItem="afW-8h-zMK" firstAttribute="top" secondItem="ua5-08-mss" secondAttribute="bottom" id="acc-jA-g1u"/>
                             <constraint firstItem="ua5-08-mss" firstAttribute="top" secondItem="jQB-Ge-5Kt" secondAttribute="top" id="d1v-58-7JZ"/>
                             <constraint firstItem="ua5-08-mss" firstAttribute="leading" secondItem="jQB-Ge-5Kt" secondAttribute="leading" id="tiJ-Dp-JVW"/>
@@ -208,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ohq-dx-m28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755" y="65"/>
+            <point key="canvasLocation" x="791.25" y="32.5"/>
         </scene>
     </scenes>
 </document>
