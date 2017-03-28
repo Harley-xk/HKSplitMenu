@@ -1,6 +1,6 @@
 {
   "name": "HKSplitMenu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "分割视图，可以自定义菜单栏的宽度和样式",
   "description": "支持 iPhone 与 iPad，基于 SizeClass，在非 Compact 宽度下自动隐藏菜单栏，变为侧滑模式",
   "homepage": "https://github.com/Harley-xk/HKSplitMenu",
@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "HKSplitMenu/Classes/**/*"
+  "source_files": "HKSplitMenu/Classes/**/*",
+  "resource_bundles": {
+    "HKSplitMenu": [
+      "HKSplitMenu/Assets/*"
+    ]
+  }
 }

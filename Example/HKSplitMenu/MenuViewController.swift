@@ -24,6 +24,7 @@ class MenuViewController: UIViewController,
                     let content = ContentViewController.fromSB()
                     content.title = currentItem!.title
                     let nav = UINavigationController(rootViewController: content)
+                    nav.navigationBar.isTranslucent = false
                     return nav
                 })
                 splitMenu?.hideMenu()
@@ -37,6 +38,7 @@ class MenuViewController: UIViewController,
         setupMenuItems()
         currentItem = groups[0].items[0]
         tableView.reloadData()
+        tableView.selectRow(at: IndexPath(row:0, section: 0), animated: true, scrollPosition: .none)
     }
 
     private func setupMenuItems() {

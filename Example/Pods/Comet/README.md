@@ -83,23 +83,27 @@ App 的基本功能就是执行各种任务，比如网络任务。正常情况�
 1. **通过日期字符串创建日期对象**
 
 	```swift
-	public init?(string: String, format: String = "yyyy-MM-dd HH:mm:ss", local: Locale = Locale.current)
+	public init?(string: String, format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = TimeZone.current)
 	```
 	*string* - 日期字符串
 	
 	*format* - 日期的格式，默认为"yyyy-MM-dd HH:mm:ss"
 	
-	*local* - 地区，默认为当前设置的地区
+	*timeZone* - 时区，默认为设备当前设置的时区
+	
+	*将 local 参数替换为 timeZone*
 	
 
 2. **将日期转换为指定格式的字符串**
 	
 	```swift
-	public func string(format: String = "yyyy-MM-dd HH:mm:ss", local: Locale = Locale.current) -> String
+	public func string(format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = TimeZone.current) -> String
 	```
 	*format* - 指定的字符串格式
 	
-	*local* - 地区，默认为当前设置的地区
+	*timeZone* - 时区，默认为设备当前设置的时区
+
+	*将 local 参数替换为 timeZone*
 	
 3. **日期计算**
 	
@@ -252,7 +256,7 @@ App 的基本功能就是执行各种任务，比如网络任务。正常情况�
 1. **在 IB 中快速设置属性**
 
 	```swift
-   @IBInspectable var cornerRadius: CGFloat  // 边角弧度
+   @IBInspectable var cornerRadius: CGFloat  // 边角半径
    @IBInspectable var borderWidth: CGFloat   // 边框宽度
    @IBInspectable var borderColor: UIColor?  // 边框颜色
 	```

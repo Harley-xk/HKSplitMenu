@@ -21,7 +21,6 @@ class ContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     @IBAction func menuAction(_ sender: Any) {
         splitMenu?.toggleMenu()
     }
