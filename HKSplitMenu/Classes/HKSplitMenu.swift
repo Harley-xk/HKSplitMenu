@@ -76,7 +76,7 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
     open var isMenuShown: Bool {
         return menuShown
     }
-
+    
     // MARK: - Private
     private weak var menuContainer: UIView!
     private weak var menuWidthConstraint: NSLayoutConstraint!
@@ -86,6 +86,8 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
     
     private var currentContent: UIViewController?
     private var cachedContentViewControllers: [String : UIViewController] = [:]
+    
+    private var shadowView: UIImageView!
     
     private var panGesture: UIPanGestureRecognizer!
     private var tapGesture: UITapGestureRecognizer!
@@ -107,6 +109,7 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
 
         setupMenuContainer()
         setupContentContainer()
+        setupShadow()
         
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureAction(_:)))
         panGesture.delegate = self
@@ -281,6 +284,21 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         view.layoutIfNeeded()
     }
     
+    private func setupShadow() {
+        let image = UIImage(named: "line_shadow.png", in: HKSplitMenu.bundle, compatibleWith: nil)
+        shadowView = UIImageView(forAutoLayout: true)
+        shadowView.image = image
+        contentContainer.addSubview(shadowView)
+        
+        let top = NSLayoutConstraint(item: shadowView, attribute: .top, relatedBy: .equal, toItem: contentContainer, attribute: .top, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: shadowView, attribute: .bottom, relatedBy: .equal, toItem: contentContainer, attribute: .bottom, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: shadowView, attribute: .right, relatedBy: .equal, toItem: contentContainer, attribute: .left, multiplier: 1, constant: 0)
+        let width = NSLayoutConstraint(item: shadowView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 3)
+
+        view.addConstraints([top, bottom, right, width])
+        view.layoutIfNeeded()
+    }
+    
     private func setupMenu() {
         
         if menu != nil {
@@ -322,7 +340,16 @@ open class HKSplitMenu: UIViewController, UIGestureRecognizerDelegate {
         currentContent = new
         view.layoutIfNeeded()
     }
-
+    
+    private class var bundle: Bundle {
+        
+        var bundle: Bundle = Bundle.main
+        let framework = Bundle(for: HKSplitMenu.classForCoder())
+        if let resource = framework.path(forResource: "HKSplitMenu", ofType: "bundle") {
+            bundle = Bundle(path: resource) ?? Bundle.main
+        }
+        return bundle
+    }
 }
 
 
